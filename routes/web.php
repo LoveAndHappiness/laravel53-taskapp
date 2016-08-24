@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('tasks/{task}/toggleTaskCompletion', ['as' => 'tasks.complete', 'uses' => 'TasksController@toggleTaskCompletion']);
+Route::resource('tasks', 'TasksController');
